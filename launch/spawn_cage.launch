@@ -1,0 +1,11 @@
+<?xml version="1"?>
+
+<launch>
+
+    <arg name="world" default="vistec"/>
+
+        <param name="cage_description" command="$(find xacro)/xacro.py --inorder $(find syrena_gazebo_ar_track)/urdf/cage_v63.urdf"/>
+
+        <node name="spawn_cage" pkg="gazebo_ros" type="spawn_model" args="-urdf -param cage_description -z 0 -y 0 -x 0 -R 0 -P 0 -Y 0 -model syrena_cage" respawn="false" output="screen"/>
+
+</launch>
